@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from .models import Alimentacion , Movibilidad
 from django.http import HttpResponse
+from .forms import Dieta_form
 
 # Create your views here.
 def Hacer_Movilidad(request):
@@ -30,14 +31,16 @@ def Hacer_ejercicio(request):
 
 
 def Crear_plato(request):
-    if request.method == "Plato":
+    if request.method == "POST":
 
 
-        plato_ideal = plato_ideal(Proteina =request.Plato["Proteina"],Hidrato =request.Plato["Hidrato"],Fibra= request.Plato["Fibra"] )
+        alimentacion = Alimentacion( Proteína=request.POST["Proteína"],Hidrato=request.POST["Hidrato"],Fibra=request.POST["Fibra"] )
 
-        plato_ideal.save(Alimentacion)        
+        alimentacion.save(Alimentacion)        
 
         return render(request,"index.html")
+
+
 
 
     return render(request ,"crear_alimento.html")
