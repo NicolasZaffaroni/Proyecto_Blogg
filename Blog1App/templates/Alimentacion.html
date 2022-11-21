@@ -1,7 +1,13 @@
-{% extends 'index.html' %}
+<form action=" " method="POST"> {% csrf_token %} 
+    </h1>Crea tu Propio Plato </h1>
+    <br> <br/> 
 
-{% load static %}
+    </h2>Crea, tu propio plato y subi tus comidas diarias, tambien mira las de otros usuarios para nunca quedarte sin ideas!</h2>
 
-{% block codigoDinamico %}
-    <h1>Alimentacion</h1>
-{% endblock %}
+    <h3>Llego la hora de crear!! </h3>
+    <table> 
+    {{formulario.as_table}}
+    <table/> 
+    
+
+<button type="submit"  value="Cargar">Guardar Plato</button>

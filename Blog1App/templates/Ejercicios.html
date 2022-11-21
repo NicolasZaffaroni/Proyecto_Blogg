@@ -1,7 +1,13 @@
-{% extends 'index.html' %}
+<form action=" " method="POST"> {% csrf_token %} 
+</h1>Arma tu propia rutina!</h1>
+<br> <br/> 
 
-{% load static %}
+</h2>Si sos entrenador, podes crear en este apartado tus ejercicios con pausas y peso, para clientes en sus rutinas diarias!</h2>
 
-{% block codigoDinamico %}
-    <h1>Ejercicios</h1>
-{% endblock %}
+<h3>A entrenar</h3>
+<table> 
+{{formulario.as_table}}
+<table/> 
+
+
+<button type="submit"  value="Cargar">Guardar ejercicio.</button>
