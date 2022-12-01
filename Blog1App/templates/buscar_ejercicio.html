@@ -1,0 +1,39 @@
+<form action=""  method= "get" >
+    <h1>Encontra el ejercicio, que otros usuarios y entradores ya cargaron en nuestra plataforma!</h1>
+
+    <h3>Encontralo y entrena!!</h3>
+
+    <input type="text" name="Ejercicio" id="Ejercicio" placeholder="Pecho plano,Remo libre,Sentadilla" required><p>
+
+    <input type="submit" value= "Buscar"  required>
+
+
+
+
+
+</form >
+{% if Musculos %}
+    <ul>
+    {% for  Ejercicio in Musculos %}
+        <li>Ejercicio de  {{Ejercicio.Ejercicio}}
+
+        Para que trabaje el {{Ejercicio.Musculo_Implicado}} 
+        <br>
+        Con  el peso  de {{Ejercicio.Carga}} PC (peso corporal) BS (barra sola)
+        <br>
+        Que puede variar segun tu nivel que es  {{Ejercicio.Nivel}}
+        <br>
+        El descanso de {{Ejercicio.Descanso}} 
+        <br>
+        La manera correcta de hacer llevarlo a cabo es <a href={{Ejercicio.Link_Video}} >Video del ejercicio</a> 
+    {% endfor %}
+    </ul ></br>
+
+{%else%}
+    <p>No hay ejercicios cargados,anda al apartado <a href="http://127.0.0.1:8000/hacer_ejercicio/">Musculacion</a>  y carga el tuyo!'</p>
+{% endif %}
+
+
+
+
+

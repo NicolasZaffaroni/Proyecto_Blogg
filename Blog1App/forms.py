@@ -17,6 +17,7 @@ class Musculacion_form(forms.Form):
     Ejercicio= forms.CharField(max_length=40)
     Musculo_Implicado = forms.CharField(max_length=40)
     Carga= forms.CharField()
+    Series= forms.CharField(max_length=40,)
     Descanso= forms.CharField(max_length=40)
     Nivel = forms.CharField( )
     Link_Video = forms.CharField( )

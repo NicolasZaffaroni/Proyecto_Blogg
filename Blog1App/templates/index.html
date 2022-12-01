@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Entrenamiento y Salud</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -20,11 +20,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                
-                <a class="navbar-brand" href="{% url 'Musculacion' %}">Musculacion</a>
-                <a class="navbar-brand" href="{% url 'Alimentacion' %}">Alimentacion</a>
-                <a class="navbar-brand" href="{% url 'Relax' %}">Relajarte</a>
-                <a class="btn btn-primary" href="#signup">Registrarse</a>
+                <a class="btn btn-secondary" href="{% url 'Buscador relax' %}">Buscar relax</a>
+                <a class="btn btn-success" href="{% url 'Buscar Dieta' %}">Buscar Dieta</a>
+                <a class="btn btn-warning" href="{% url 'Buscar Ejercicio' %}">Buscar Ejercicio</a>
+                <a class="btn btn-primary" href="{% url 'Musculacion' %}">Musculacion</a>
+                <a class="btn btn-info" href="{% url 'Alimentacion' %}">Alimentacion</a>
+                <a class="btn btn-danger" href="{% url 'Relax' %}">Relajarte</a>
+                <a class="btn btn-dark" href="#signup">Registrarse</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -34,7 +36,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
+                            <h1 class="mb-5">El movimiento es salud!</h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -51,11 +53,11 @@
                                         <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                                         <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
                                     </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Cargar</button></div>
                                 </div>
                                 <!-- Submit success message-->
                                 <!---->
-                                <!-- This is what your users will see when the form-->
+                                <!-- This is what your users will see when the form-->º
                                 <!-- has successfully submitted-->
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
@@ -85,15 +87,14 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="#!">Sobre mi</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item"><a href="#!">Terminos de uso</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Todos los derechos reservados.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">

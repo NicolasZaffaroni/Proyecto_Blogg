@@ -50,6 +50,7 @@ class Musculacion(models.Model):
     Ejercicio = models.CharField(max_length=40)
     Musculo_Implicado  = models.CharField(max_length=40)
     Carga = models.CharField(max_length=40)
+    Series= models.CharField(max_length=40, null=True)
     Descanso = models.CharField(max_length=40)
     Nivel = models.CharField(max_length=40, null=True)
     Link_Video = models.CharField(max_length=200, null=True)

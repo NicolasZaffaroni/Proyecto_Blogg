@@ -71,6 +71,10 @@ def Hacer_ejercicio(request):
 
 
 
+
+
+
+
 # Create your views here.
 
 
@@ -94,3 +98,59 @@ def Consejo_antistress(request):
 
 
     return render(request ,"Antistress.html" ,{'formulario':formulario})
+
+
+
+
+
+
+def buscar_ejercicio(request):
+    if request.GET.get('Ejercicio',False ):
+        Ejercicio= request.GET['Ejercicio']
+        Musculos = Musculacion.objects.filter(Ejercicio__icontains=Ejercicio)
+
+        return render(request,'buscar_ejercicio.html',{"Musculos":Musculos})
+    else:
+        respuesta= 'No hay ejercicios cargados,anda al apartado Musculacion y carga el tuyo!'
+    return render(request,"buscar_ejercicio.html",{'respuesta': respuesta })
+
+
+
+
+
+
+
+
+def buscar_dieta(request):
+    if request.GET.get('Proteina',False ):
+        Proteina= request.GET['Proteina']
+        Dieta= Alimentacion.objects.filter(Proteina__icontains=Proteina)
+
+        return render(request,'buscar_dieta.html',{"Dieta":Dieta})
+    else:
+        respuesta= 'No se encontro el plato, que buscas, carga el tuyo en la seccion Alimento, asi otros usuarios pueden verlo'
+    return render(request,"buscar_dieta.html",{'respuesta': respuesta })
+    
+
+
+
+
+
+    
+
+
+
+def buscar_relax(request):
+    if request.GET.get('Ejercicio',False ):
+        Ejercicio= request.GET['Ejercicio']
+        Relajate= Antistress.objects.filter(Ejercicio__icontains=Ejercicio)
+
+        return render(request,'buscar_relax.html',{"Relajate":Relajate})
+    else:
+        respuesta= 'No se encontro el ejercicio , que buscas, carga el tuyo en la seccion Relajarte, asi otros usuarios pueden verlo'
+    return render(request,"buscar_relax.html",{'respuesta': respuesta })
+
+
+
+
+

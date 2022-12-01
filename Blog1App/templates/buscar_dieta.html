@@ -1,0 +1,38 @@
+<form action=""  method= "get" >
+    <h1>Encontra todas las variantes de plato que subieron otros usuarios cargaron</h1>
+
+    <h3>Encontralo y disfruta!</h3>
+
+    <input type="text" name="Proteina" id="Proteina" placeholder="Pollo,Pavo,Tofu" required><p>
+
+    <input type="submit" value= "Buscar"  required>
+
+
+
+
+
+</form >
+{% if Dieta %}
+    <ul>
+    {% for  Proteina in Dieta %}
+        
+        <li>La proteina de este plato es {{Proteina.Proteina}}
+        <br>
+        Los hidratos son {{Proteina.Hidratos}} 
+        <br>
+        La fibra es {{Proteina.Fibra}} 
+        <br>
+        <h2>Disfuta de tu plato! y alcanza tus objetivos </h2>
+    {% endfor %}
+    </ul ></br>
+
+{%else%}
+    <p>No se encontro el plato, que buscas, carga el tuyo en la seccion <a href= "http://127.0.0.1:8000/mostrar_alimentacion/">Alimentacion</a> , asi otros usuarios pueden verlo</p>
+{% endif %}
+
+
+
+
+
+
+

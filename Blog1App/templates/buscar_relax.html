@@ -1,0 +1,34 @@
+<form action=""  method= "get" >
+    <h1>Descubri la mejor manera de relajarte</h1>
+
+    <h3>La solucion para un dia largo esta aca!</h3>
+
+    <input type="text" name="Ejercicio" id="Ejercicio" placeholder="Estiramientos,Grounding" required><p>
+
+    <input type="submit" value= "Buscar"  required>
+
+
+
+
+
+</form >
+{% if Relajate %}
+    <ul>
+    {% for  Ejercicio in Relajate %}
+        
+        <li>Ejercicio de  {{Ejercicio.Ejercicio}}
+        <br>
+        El descanso recomendado es {{Ejercicio.Descanso}} 
+        <br>
+        El terreno ideal para esta practica es {{Ejercicio.Terreno_Recomendado}} 
+        <br>
+        <a href={{Ejercicio.Link_Musica}} >musica Recomendada</a> 
+        <br>
+        La manera correcta de hacer llevarlo a cabo es <a href={{Ejercicio.Link_Video}} >Video del ejercicio</a> 
+    {% endfor %}
+        <h2>Disfuta de tu momento relax </h2>
+
+
+{%else%}
+    <p>No se encontro el ejercicio , que buscas, carga el tuyo en la seccion <a href= "http://127.0.0.1:8000/consejo_antistress/">Relajarte</a> , asi otros usuarios pueden verlo</p>
+{% endif %}
