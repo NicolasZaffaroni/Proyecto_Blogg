@@ -1,0 +1,24 @@
+<h1>En este apartado encontras todos los ejercicios de la plataforma</h1>
+
+{%for Musculacion in entrenamiento %} 
+
+<p> id:{{Musculacion.id}}
+    Ejercicio {{Musculacion.Ejercicio}}
+    Musculo implicado {{Musculacion.Musculo_Implicado}} 
+    Carga {{Musculacion.Carga}} 
+    Series {{Musculacion.Series}}
+    Descanso {{Musculacion.Descanso}} 
+    Nivel  {{Musculacion.Nivel}} 
+    <a href={{Ejercicio.Link_Video}} >Video del ejercicio</a>
+</p>
+    <button>
+        <a href="{% url 'Eliminar Ejercicio' Musculacion.id %}">Eliminar</a>
+    </button>
+
+    <button>
+        <a href="{% url 'Modificar Ejercicio' Musculacion.id %}">Modificar</a>
+    </button>
+
+
+
+{% endfor %}

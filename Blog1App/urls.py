@@ -23,7 +23,13 @@ urlpatterns =[
     path('consejo_antistress/',views.Consejo_antistress, name='Relax'),
     path('buscar_ejercicio/',views.buscar_ejercicio, name='Buscar Ejercicio'),
     path('buscar_dieta/',views.buscar_dieta, name='Buscar Dieta'),
-    path('buscar_relax/',views.buscar_relax, name='Buscador relax')
+    path('buscar_relax/',views.buscar_relax, name='Buscador relax'),
+    path('mostrar_ejercicio/',views.mostrar_ejercicio, name='Mostrar Ejercicios'),
+    path('eliminar_ejercicio/<ejercicio_id>',views.eliminar_ejercicio, name='Eliminar Ejercicio'),
+    path('modificar_ejercicio/<ejercicio_id>',views.Modificar_ejercicio, name='Modificar Ejercicio'),
+    path('mostrar_relax/',views.mostrar_relax, name='Mostrar Relax'),
+    path('eliminar_relax/<relax_id>',views.eliminar_relax, name='Eliminar Relax'),
+    path('Modificar_antistress/<relax_id>',views.Modificar_antistress, name='Modificar Relax')
     
 ]
 

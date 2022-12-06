@@ -54,7 +54,7 @@ def Hacer_ejercicio(request):
             formulario_limpio = formulario.cleaned_data
 
 
-            pesas= Musculacion(Ejercicio=formulario_limpio['Ejercicio'],Musculo_Implicado=formulario_limpio['Musculo_Implicado'],Carga=formulario_limpio['Carga'],Descanso=formulario_limpio['Descanso'],Nivel=formulario_limpio['Nivel'],Link_Video=formulario_limpio['Link_Video'])
+            pesas= Musculacion(Ejercicio=formulario_limpio['Ejercicio'],Musculo_Implicado=formulario_limpio['Musculo_Implicado'],Carga=formulario_limpio['Carga'],Series=formulario_limpio['Series'],Descanso=formulario_limpio['Descanso'],Nivel=formulario_limpio['Nivel'],Link_Video=formulario_limpio['Link_Video'])
 
             pesas.save()
 
@@ -154,3 +154,127 @@ def buscar_relax(request):
 
 
 
+
+def mostrar_ejercicio(request):
+    entrenamiento = Musculacion.objects.all()
+
+    context = {'entrenamiento':entrenamiento}
+
+    return render(request,'mostrar_ejercicio.html', context=context )
+
+
+
+
+
+def eliminar_ejercicio(request, ejercicio_id):
+    entrenamiento_eliminado = Musculacion.objects.get(id = ejercicio_id )
+
+    entrenamiento_eliminado.delete()
+
+
+    entrenamiento = Musculacion.objects.all()
+
+    context = {'entrenamiento':entrenamiento}
+
+    return render(request,'mostrar_ejercicio.html', context=context )
+
+
+
+
+
+
+def Modificar_ejercicio(request,ejercicio_id):
+
+    pesas = Musculacion.objects.get(id = ejercicio_id )
+
+    if request.method == "POST":
+        formulario= Musculacion_form(request.POST)
+
+        if formulario.is_valid():
+
+            formulario_limpio = formulario.cleaned_data
+
+
+            pesas.Ejercicio=formulario_limpio['Ejercicio']
+            pesas.Musculo_Implicado=formulario_limpio['Musculo_Implicado']
+            pesas.Carga=formulario_limpio['Carga']
+            pesas.Series=formulario_limpio['Series']
+            pesas.Descanso=formulario_limpio['Descanso']
+            pesas.Nivel=formulario_limpio['Nivel']
+            pesas.Link_Video=formulario_limpio['Link_Video']
+            
+            pesas.save()
+
+            return render(request,'index.html')
+
+
+    else:
+        formulario= Musculacion_form(initial={'Ejercicio':pesas.Ejercicio,'Musculo_Implicado':pesas.Musculo_Implicado,'Carga':pesas.Carga,'Series':pesas.Series,'Descanso':pesas.Descanso,'Nivel':pesas.Nivel,'Link_Video':pesas.Link_Video})
+
+
+
+
+    return render(request ,"modificar_ejercicio.html",{'formulario':formulario})
+
+
+
+
+
+
+
+
+
+def mostrar_relax(request):
+    relajate= Antistress.objects.all()
+
+    context = {'relajate':relajate}
+
+    return render(request,'mostrar_relax.html', context=context )
+
+
+
+
+def eliminar_relax(request, relax_id):
+    relax_eliminado = Antistress.objects.get(id = relax_id )
+
+    relax_eliminado.delete()
+
+
+    relajate= Antistress.objects.all()
+
+    context = {'relajate':relajate}
+
+    return render(request,'mostrar_relax.html', context=context )
+
+
+
+
+
+def Modificar_antistress(request,relax_id):
+
+    consejos_relax= Antistress.objects.get(id = relax_id )
+    
+    if request.method == "POST":
+        formulario= Antistress_form(request.POST)
+
+        if formulario.is_valid():
+            formulario_limpio = formulario.cleaned_data
+
+            consejos_relax.Ejercicio=formulario_limpio['Ejercicio']
+            consejos_relax.Descanso=formulario_limpio['Descanso']
+            consejos_relax.Terreno_Recomendado=formulario_limpio['Terreno_Recomendado']
+            consejos_relax.Link_Musica=formulario_limpio['Link_Musica']
+            consejos_relax.Link_Video=formulario_limpio['Link_Video']
+
+
+            consejos_relax.save()
+
+            return render(request, 'index.html')
+
+    else:
+        formulario= Antistress_form(initial={'Ejercicio':consejos_relax.Ejercicio,'Descanso':consejos_relax.Descanso,'Terreno_Recomendado':consejos_relax.Terreno_Recomendado,'Link_Musica':consejos_relax.Link_Musica,'Link_Video':consejos_relax.Link_Video})
+
+
+
+
+    return render(request ,"modifica_relax.html" ,{'formulario':formulario})

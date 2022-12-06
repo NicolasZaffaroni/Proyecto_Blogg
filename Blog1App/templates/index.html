@@ -20,13 +20,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="btn btn-secondary" href="{% url 'Buscador relax' %}">Buscar relax</a>
-                <a class="btn btn-success" href="{% url 'Buscar Dieta' %}">Buscar Dieta</a>
                 <a class="btn btn-warning" href="{% url 'Buscar Ejercicio' %}">Buscar Ejercicio</a>
-                <a class="btn btn-primary" href="{% url 'Musculacion' %}">Musculacion</a>
+                <a class="btn btn-warning" rel='noopener' href="{% url 'Mostrar Ejercicios' %}">Mostrar Ejercicios</a>
+                <a class="btn btn-warning" href="{% url 'Musculacion' %}">Musculacion</a>
+                <a class="btn btn-success" href="{% url 'Relax' %}">Relajarte</a>
+                <a class="btn btn-success" href="{% url 'Mostrar Relax' %}">Mostrar Relax</a>
+                <a class="btn btn-success" href="{% url 'Buscador relax' %}">Buscar relax</a>
                 <a class="btn btn-info" href="{% url 'Alimentacion' %}">Alimentacion</a>
-                <a class="btn btn-danger" href="{% url 'Relax' %}">Relajarte</a>
-                <a class="btn btn-dark" href="#signup">Registrarse</a>
+                <a class="btn btn-info" href="{% url 'Buscar Dieta' %}">Buscar Dieta</a>
+                <a class="btn btn-danger" href="#signup">Registrarse</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -57,7 +59,7 @@
                                 </div>
                                 <!-- Submit success message-->
                                 <!---->
-                                <!-- This is what your users will see when the form-->º
+                                <!-- This is what your users will see when the form-->
                                 <!-- has successfully submitted-->
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">

@@ -1,0 +1,23 @@
+<h1>En este apartado encontras todos los consejos para relajarte de la plataforma</h1>
+
+{%for Antistress in relajate %} 
+
+<p> id:{{Antistress.id}}
+    Ejercicio {{Antistress.Ejercicio}}
+    Descanso {{Antistress.Descanso}}
+    Terreno Recomendado {{Antistress.Terreno_Recomendado}} 
+    <a href={{Antistress.Link_Musica}} >Musica</a>
+    <a href={{Antistress.Link_Video}} >Video del ejercicio</a>
+    
+</p>
+    <button>
+        <a href="{% url 'Eliminar Relax' Antistress.id %}">Eliminar</a>
+    </button>
+
+    <button>
+        <a href="{% url 'Modificar Relax' Antistress.id %}">Modificar</a>
+    </button>
+
+
+
+{% endfor %}
