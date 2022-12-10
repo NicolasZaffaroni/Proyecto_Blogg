@@ -21,14 +21,18 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="btn btn-warning" href="{% url 'Buscar Ejercicio' %}">Buscar Ejercicio</a>
-                <a class="btn btn-warning" rel='noopener' href="{% url 'Mostrar Ejercicios' %}">Mostrar Ejercicios</a>
+                <a class="btn btn-warning" href="{% url 'Mostrar Ejercicios' %}">Mostrar Ejercicios</a>
                 <a class="btn btn-warning" href="{% url 'Musculacion' %}">Musculacion</a>
                 <a class="btn btn-success" href="{% url 'Relax' %}">Relajarte</a>
                 <a class="btn btn-success" href="{% url 'Mostrar Relax' %}">Mostrar Relax</a>
                 <a class="btn btn-success" href="{% url 'Buscador relax' %}">Buscar relax</a>
                 <a class="btn btn-info" href="{% url 'Alimentacion' %}">Alimentacion</a>
+                <a class="btn btn-info" href="{% url 'Mostrar Alimentacion' %}">Mostrar Alimentacion</a>
                 <a class="btn btn-info" href="{% url 'Buscar Dieta' %}">Buscar Dieta</a>
-                <a class="btn btn-danger" href="#signup">Registrarse</a>
+                <a class="btn btn-danger" href="{% url 'signup' %}">Registrarse</a>
+                <a class="btn btn-danger" href="{% url 'Login' %}">Login</a>
+                <a class="btn btn-danger" href="{% url 'Modificar Usuario' %}">Editar Usuario</a>
+                <a class="btn btn-danger" href="{% url 'Logout' %}">Logout</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -48,15 +52,6 @@
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
                             <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <!-- Email address input-->
-                                <div class="row">
-                                    <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
-                                    </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Cargar</button></div>
-                                </div>
                                 <!-- Submit success message-->
                                 <!---->
                                 <!-- This is what your users will see when the form-->
@@ -89,11 +84,9 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">Sobre mi</a></li>
+                            <li class="list-inline-item"><a href="{% url 'Contacto' %}">Contacto</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terminos de uso</a></li>
+                            <li class="list-inline-item"><a href="{% url 'Terminos' %}">Terminos de uso</a></li>
                             <li class="list-inline-item">⋅</li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Todos los derechos reservados.</p>
@@ -101,13 +94,10 @@
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                                <a href="https://www.facebook.com/nico.zaffaroni.5"><i class="bi-facebook fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                                <a href="https://www.instagram.com/nicozaffaroni95/"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
                     </div>

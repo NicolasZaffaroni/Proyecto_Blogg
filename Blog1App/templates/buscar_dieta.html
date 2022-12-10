@@ -1,7 +1,12 @@
-<form action=""  method= "get" >
-    <h1>Encontra todas las variantes de plato que subieron otros usuarios cargaron</h1>
+<strong><h1>Encontra todas las variantes de plato que subieron otros usuarios cargaron</h1></strong>
 
-    <h3>Encontralo y disfruta!</h3>
+<h3>Encontralo y disfruta!</h3>
+
+
+
+
+<form action=""  method= "get" >
+
 
     <input type="text" name="Proteina" id="Proteina" placeholder="Pollo,Pavo,Tofu" required><p>
 
@@ -27,12 +32,16 @@
     </ul ></br>
 
 {%else%}
-    <p>No se encontro el plato, que buscas, carga el tuyo en la seccion <a href= "http://127.0.0.1:8000/mostrar_alimentacion/">Alimentacion</a> , asi otros usuarios pueden verlo</p>
+    <p>No se encontro el plato, que buscas, carga el tuyo en la seccion <button><a href= "http://127.0.0.1:8000/mostrar_alimentacion/">Alimentacion</a></button>, asi otros usuarios pueden verlo</p>
 {% endif %}
 
 
 
 
 
+
+<button>
+    <a href="http://127.0.0.1:8000/">Inicio</a>
+</button>
 
 

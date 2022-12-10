@@ -54,8 +54,7 @@ class Musculacion(models.Model):
     Descanso = models.CharField(max_length=40)
     Nivel = models.CharField(max_length=40, null=True)
     Link_Video = models.CharField(max_length=200, null=True)
-    
-    
+
 
 
 

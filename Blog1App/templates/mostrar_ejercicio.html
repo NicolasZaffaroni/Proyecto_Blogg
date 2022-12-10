@@ -1,4 +1,4 @@
-<h1>En este apartado encontras todos los ejercicios de la plataforma</h1>
+<strong><h1>En este apartado encontras todos los ejercicios de la plataforma</h1></strong>
 
 {%for Musculacion in entrenamiento %} 
 
@@ -19,6 +19,20 @@
         <a href="{% url 'Modificar Ejercicio' Musculacion.id %}">Modificar</a>
     </button>
 
-
-
 {% endfor %}
+
+
+
+
+
+<p>Para subir tu ejercicio hace click en ejercicio nuevo y carga el tuyo!'</p>-
+<button><a href="http://127.0.0.1:8000/hacer_ejercicio/">Ejercicio Nuevo</a></button>
+
+
+
+
+
+
+<button>
+    <a href="http://127.0.0.1:8000/">Inicio</a>
+</button>

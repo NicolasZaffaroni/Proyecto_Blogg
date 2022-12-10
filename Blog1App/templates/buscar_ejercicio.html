@@ -1,7 +1,12 @@
-<form action=""  method= "get" >
-    <h1>Encontra el ejercicio, que otros usuarios y entradores ya cargaron en nuestra plataforma!</h1>
+<h1>Encontra el ejercicio, que otros usuarios y entradores ya cargaron en nuestra plataforma!</h1>
 
-    <h3>Encontralo y entrena!!</h3>
+
+<h3>Encontralo y entrena!!</h3>
+
+
+
+<form action=""  method= "get" >
+
 
     <input type="text" name="Ejercicio" id="Ejercicio" placeholder="Pecho plano,Remo libre,Sentadilla" required><p>
 
@@ -30,10 +35,14 @@
     </ul ></br>
 
 {%else%}
-    <p>No hay ejercicios cargados,anda al apartado <a href="http://127.0.0.1:8000/hacer_ejercicio/">Musculacion</a>  y carga el tuyo!'</p>
+    <p>No hay ejercicios cargados,anda al apartado <button><a href="http://127.0.0.1:8000/hacer_ejercicio/">Musculacion</a></button>  y carga el tuyo!</p>
 {% endif %}
 
 
 
 
 
+
+<button>
+    <a href="http://127.0.0.1:8000/">Inicio</a>
+</button>

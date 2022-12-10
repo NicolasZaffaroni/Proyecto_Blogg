@@ -1,0 +1,33 @@
+<strong><h1>En este apartado encontras todos los platos de la plataforma</h1></strong>
+
+{%for Alimentacion in alimentate %} 
+
+<p> id:{{Alimentacion.id}}
+    Proteina {{Alimentacion.Proteina}}
+    Hidratos {{Alimentacion.Hidratos}} 
+    Fibra {{Alimentacion.Fibra}} 
+</p>
+    <button>
+        <a href="{% url 'Eliminar Alimentacion' Alimentacion.id %}">Eliminar</a>
+    </button>
+
+    <button>
+        <a href="{% url 'Modificar Alimentacion' Alimentacion.id %}">Modificar</a>
+    </button>
+
+{% endfor %}
+
+
+
+<p>Para subir tu plato hace click en  plato nuevo  y carga el tuyo!'</p>
+<button>
+    <a href= "http://127.0.0.1:8000/mostrar_alimentacion/">Plato nuevo</a>
+</button>
+
+
+
+
+<button>
+    <a href="http://127.0.0.1:8000/">Inicio</a>
+</button>
+
