@@ -65,3 +65,15 @@ class UserEditForm(UserCreationForm):
             'password2'
         ]
         help_texts = {k: '' for k in fields}
+
+
+
+
+
+
+#class Avatar(UserEditForm):
+
+
+    #User= forms.ForeignKey(User, on_delete=forms.CASCADE)
+
+    #imagen = forms.ImageField(upload_to='images/', null=True, blank=True)

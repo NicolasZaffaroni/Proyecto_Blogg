@@ -38,7 +38,10 @@ urlpatterns =[
     path('logout/', views.AdminLogoutView.as_view(), name='Logout'),
     path('mostrar_contacto',views.mostrar_contacto,  name='Contacto'),
     path('mostrar_terminos',views.mostrar_terminos,  name='Terminos'),
-    path('modificar_usuario/', views.modificar_usuario, name='Modificar Usuario')
+    path('modificar_usuario/', views.modificar_usuario, name='Modificar Usuario'),
+    path('mostrar_sobremi/', views.mostrar_sobremi, name='Sobre mi')
+    #path('agregar_avatar/', views.agregar_avatar, name='Agregar Avatar')
+    
     
     
 ]

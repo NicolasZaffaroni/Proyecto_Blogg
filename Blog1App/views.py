@@ -1,13 +1,14 @@
 
 from django.shortcuts import render
-from .models import Alimentacion, Musculacion,Antistress
+from .models import Alimentacion, Musculacion,Antistress,Avatar
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView
 from django.views.generic.detail import DetailView
-from .forms import Alimentacion_form,Musculacion_form,Antistress_form, SignUpForm ,UserEditForm
+from .forms import Alimentacion_form,Musculacion_form,Antistress_form, SignUpForm ,UserEditForm,User
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView , LogoutView
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def Hacer_Movilidad(request):
@@ -20,11 +21,36 @@ def Hacer_Movilidad(request):
 
 
 def mostrar_index(request):
+    imagenes = Avatar.objects.filter(user=request.user.id)
+    if imagenes:
+        return render(request, 'index.html', {'url': imagenes[0].imagen.url})
+    else:
+        return render(request, 'index.html')
 
-    return render(request,"index.html")
 
 
-@login_required
+#def agregar_avatar(request):
+    if request.method == 'POST':    
+
+
+        formulario= Avatar(request.POST,request.FILES)
+
+
+        if formulario.is_valid():
+            usuario= User.objects.get(username=request.user)
+            avatar = Avatar(user = usuario, imagen =formulario.cleaned_data['imagen'])
+            avatar.save()
+            return render(request,"index.html")
+    else:
+        formulario = Avatar()
+        return render(request , 'Agregar_avatar.html',{'formulario':formulario})
+    
+
+
+
+
+
+
 def mostrar_alimentacion(request):
     if request.method == "POST":
 
@@ -49,7 +75,7 @@ def mostrar_alimentacion(request):
 
     return render(request , 'Alimentacion.html',{'formulario':formulario})
 
-@login_required
+
 def Hacer_ejercicio(request):
     if request.method == "POST":
         formulario= Musculacion_form(request.POST)
@@ -83,7 +109,7 @@ def Hacer_ejercicio(request):
 # Create your views here.
 
 
-@login_required
+
 def Consejo_antistress(request):
     if request.method == "POST":
         formulario= Antistress_form(request.POST)
@@ -108,7 +134,7 @@ def Consejo_antistress(request):
 
 
 
-@login_required
+
 def buscar_ejercicio(request):
     if request.GET.get('Ejercicio',False ):
         Ejercicio= request.GET['Ejercicio']
@@ -125,7 +151,7 @@ def buscar_ejercicio(request):
 
 
 
-@login_required
+
 def buscar_dieta(request):
     if request.GET.get('Proteina',False ):
         Proteina= request.GET['Proteina']
@@ -144,7 +170,7 @@ def buscar_dieta(request):
     
 
 
-@login_required
+
 def buscar_relax(request):
     if request.GET.get('Ejercicio',False ):
         Ejercicio= request.GET['Ejercicio']
@@ -159,7 +185,7 @@ def buscar_relax(request):
 
 
 
-@login_required
+
 def mostrar_ejercicio(request):
     entrenamiento = Musculacion.objects.all()
 
@@ -170,7 +196,7 @@ def mostrar_ejercicio(request):
 
 
 
-@login_required
+
 def eliminar_ejercicio(request, ejercicio_id):
     entrenamiento_eliminado = Musculacion.objects.get(id = ejercicio_id )
 
@@ -187,7 +213,7 @@ def eliminar_ejercicio(request, ejercicio_id):
 
 
 
-@login_required
+
 def Modificar_ejercicio(request,ejercicio_id):
 
     pesas = Musculacion.objects.get(id = ejercicio_id )
@@ -228,7 +254,7 @@ def Modificar_ejercicio(request,ejercicio_id):
 
 
 
-@login_required
+
 def mostrar_relax(request):
     relajate= Antistress.objects.all()
 
@@ -238,7 +264,7 @@ def mostrar_relax(request):
 
 
 
-@login_required
+
 def eliminar_relax(request, relax_id):
     relax_eliminado = Antistress.objects.get(id = relax_id )
 
@@ -253,7 +279,7 @@ def eliminar_relax(request, relax_id):
 
 
 
-@login_required
+
 
 def Modificar_antistress(request,relax_id):
 
@@ -287,7 +313,7 @@ def Modificar_antistress(request,relax_id):
 
 
 
-@login_required
+
 def mostrar_comida(request):
     alimentate= Alimentacion.objects.all()
 
@@ -300,7 +326,7 @@ def mostrar_comida(request):
 
 
 
-@login_required
+
 def eliminar_alimentacion(request, alimentacion_id):
     alimentacion_eliminado = Alimentacion.objects.get(id = alimentacion_id )
 
@@ -317,7 +343,7 @@ def eliminar_alimentacion(request, alimentacion_id):
 
 
 
-@login_required
+
 def Modificar_alimentacion(request,alimentacion_id):
 
     comida= Alimentacion.objects.get(id = alimentacion_id )
@@ -393,7 +419,7 @@ def mostrar_terminos(request):
 
 
 
-@login_required
+
 def modificar_usuario(request):
 
     usuario = request.user
@@ -425,5 +451,9 @@ def modificar_usuario(request):
 
 
 
+
+def mostrar_sobremi(request):
+
+    return render(request,"sobremi.html")
 
 
