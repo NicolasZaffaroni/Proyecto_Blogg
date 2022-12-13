@@ -40,7 +40,6 @@ urlpatterns =[
     path('mostrar_terminos',views.mostrar_terminos,  name='Terminos'),
     path('modificar_usuario/', views.modificar_usuario, name='Modificar Usuario'),
     path('mostrar_sobremi/', views.mostrar_sobremi, name='Sobre mi')
-    #path('agregar_avatar/', views.agregar_avatar, name='Agregar Avatar')
     
     
     

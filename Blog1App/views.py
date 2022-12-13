@@ -29,22 +29,7 @@ def mostrar_index(request):
 
 
 
-#def agregar_avatar(request):
-    if request.method == 'POST':    
 
-
-        formulario= Avatar(request.POST,request.FILES)
-
-
-        if formulario.is_valid():
-            usuario= User.objects.get(username=request.user)
-            avatar = Avatar(user = usuario, imagen =formulario.cleaned_data['imagen'])
-            avatar.save()
-            return render(request,"index.html")
-    else:
-        formulario = Avatar()
-        return render(request , 'Agregar_avatar.html',{'formulario':formulario})
-    
 
 
 
@@ -377,6 +362,7 @@ class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('Home')
     template_name ='registro.html'
+    
 
 
 

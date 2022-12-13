@@ -71,9 +71,6 @@ class UserEditForm(UserCreationForm):
 
 
 
-#class Avatar(UserEditForm):
+class Avatar_formulario(forms.Form):
 
-
-    #User= forms.ForeignKey(User, on_delete=forms.CASCADE)
-
-    #imagen = forms.ImageField(upload_to='images/', null=True, blank=True)
+    imagen = forms.ImageField
